@@ -1,0 +1,117 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: silver;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(109, 107, 107);
+  color: white;
+  padding: 16px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+.logo h3 {
+  cursor: pointer;
+}
+.logo li {
+  list-style: none;
+  margin-inline: 25px;
+  font-size: 19px;
+}
+.logo li:hover {
+  color: rgb(106, 106, 218);
+  border-bottom: 2px solid black;
+  cursor: pointer;
+}
+.SearchBar {
+  display: flex;
+}
+.SearchBar input {
+  width: 220px;
+  padding: 7px;
+  font-size: 18px;
+  border: none;
+  border-radius: 3px;
+  margin-inline: 5px;
+}
+.SearchBar button {
+  width: 70px;
+  height: 40px;
+  background-color: rgb(87, 87, 247);
+  color: white;
+  font-size: 16px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}
+.SearchBar button:hover {
+  background-color: blueviolet;
+  color: beige;
+}
+.cardData {
+  display: grid;
+  justify-content: center;
+  width: 80%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: auto;
+  margin-top: 122px;
+}
+.card {
+  background-color: white;
+  padding: 11px;
+  margin-top: 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 5px;
+}
+.card img {
+  width: 99%;
+  height: 45%;
+}
+.card h3 {
+  margin-top: 10px;
+  padding: 3px;
+}
+.card p {
+  margin-top: 10px;
+  padding: 2px;
+}
+.category {
+  position: absolute;
+  color: black;
+  margin-top: 120px;
+  margin-left: 126px;
+}
+@media only screen and (max-width: 830px) {
+  li {
+    display: none;
+  }
+}
+@media only screen and (max-width: 470px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+  .logo {
+    justify-content: center;
+  }
+  .SearchBar {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+  }
+  .category {
+    margin-top: 160px;
+    text-align: center;
+  }
+}
