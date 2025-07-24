@@ -6,9 +6,11 @@ let searchType = document.getElementById("type");
 
 document.getElementById("loader").style.display = "block";
 
-const getData = (input) => {
-  let res = fetch(`https://newsapi.org/v2/everything?q=${input}&apiKey=${key}`);
-  let jsonData = res.json();
+const getData = async (input) => {
+  let res = await fetch(
+    `https://newsapi.org/v2/everything?q=${input}&apiKey=${key}`
+  );
+  let jsonData = await res.json();
 
   searchType.innerText = "Search: " + input;
   inputData.value = "";
