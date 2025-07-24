@@ -18,11 +18,13 @@
                 <h3>
                     <img src="./assets/logo.png" height="35px" title="PRIMEPOINT NEWS" alt="" />
                 </h3>
-
-                <li id="politics" onclick="navClick('politics')">Politics</li>
-                <li id="sport" onclick="navClick('sport')">Sport</li>
-                <li id="technology" onclick="navClick('technology')">Technology</li>
+                <ul class="nav-list">
+                    <li id="politics" onclick="navClick('politics')">Politics</li>
+                    <li id="sport" onclick="navClick('sport')">Sport</li>
+                    <li id="technology" onclick="navClick('technology')">Technology</li>
+                </ul>
             </div>
+
             <br />
             <div class="category">
                 <h1 id="type">PRIMEPOINT NEWS</h1>
@@ -39,6 +41,7 @@
             <p></p>
         </div>
     </div>
+    <div id="loader" style="display:none; text-align:center; margin-top:20px;">Loading...</div>
 
     <script src="script.js"></script>
 </body>

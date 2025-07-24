@@ -4,6 +4,8 @@ let Searchbtn = document.getElementById("Searchbtn");
 let inputData = document.getElementById("inputData");
 let searchType = document.getElementById("type");
 
+document.getElementById("loader").style.display = "block";
+
 const getData = async (input) => {
   let res = await fetch(
     `https://newsapi.org/v2/everything?q=${input}&apiKey=${key}`
@@ -13,11 +15,19 @@ const getData = async (input) => {
   searchType.innerText = "Search: " + input;
   inputData.value = "";
   cardData.innerHTML = "";
+  if (!jsonData.articles || jsonData.articles.length === 0) {
+    cardData.innerHTML = "<h2>No articles found for this topic.</h2>";
+    return;
+  }
+  document.getElementById("loader").style.display = "none";
+
   jsonData.articles.forEach(function (article) {
     let divs = document.createElement("div");
     divs.classList.add("card");
     cardData.appendChild(divs);
-    divs.innerHTML = ` <img src="${article.urlToImage}" alt="">
+    divs.innerHTML = ` <img src="${
+      article.urlToImage || "./assets/default.jpg"
+    }" alt="">
             <h3>${article.title}</h3>
             <p>${article.description}</p>`;
     divs.addEventListener("click", function () {
